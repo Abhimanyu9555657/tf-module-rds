@@ -43,7 +43,7 @@ resource "aws_rds_cluster" "main" {
   backup_retention_period = var.backup_retention_period
   preferred_backup_window = var.preferred_backup_window
   db_cluster_parameter_group_name = aws_db_parameter_group.main.name
-  vpc_security_group_ids = [aws_security_group.main.id]
-  skip_final_snapshot    = var.skip_final_snapshot
-  tags        = merge(local.tags, { Name = "${local.name_prefix}-cluster" })
+  vpc_security_group_ids  = [aws_security_group.main.id]
+  skip_final_snapshot     = var.skip_final_snapshot
+  tags                    = merge(local.tags, { Name = "${local.name_prefix}-cluster" })
 }
